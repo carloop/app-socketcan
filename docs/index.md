@@ -21,15 +21,20 @@ You'll need special firmware on your Carloop to print received CAN messages to t
 Flash the SocketCAN serial firmware application to your Carloop.
 
 The easiest way to flash SocketCAN serial firmware is to open the shared
-app in the Particle Web IDE and hit the Flash button (lightning bolt).
+app in the Particle Web IDE, click Copy this app and hit the Flash button (lightning bolt).
 
 [Open the SocketCAN firmware >](https://go.particle.io/shared_apps/59375f5fba82211476001274)
+
+_You'll need to sign in to your Particle account before the firmware opens._
 
 ## Computer Setup
 
 To use SocketCAN you'll need a laptop running Linux. You could even do it from a Raspberry Pi.
 
-Install the can-utils package: `sudo apt install can-utils`
+Install the can-utils package:
+```
+sudo apt install can-utils
+```
 
 SocketCAN has drivers to talk to many different devices. Since the Photon/Electron creates a serial port when you connect it to your laptop we'll use the serial line CAN driver (SLCAN).
 
@@ -53,7 +58,7 @@ you should see a CAN network
 
 When you are ready to start analyzing traffic, you bring up the CAN network by running
 ```
-sudo ifconfig can0 up
+sudo ifconfig can0 up txqueuelen 1000
 ```
 
 You can then use other can-utils like `candump`, `cansniffer` and `cansend`.
