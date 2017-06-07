@@ -67,6 +67,54 @@ Here's for example of running `candump can0` on a Ford Fiesta.
 
 <iframe width="853" height="480" src="https://www.youtube.com/embed/igTsTbvPPP0?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
+## can-utils
+
+Here's an overview of the main tools in can-utils
+
+### `candump`
+
+See the raw traffic on the CAN bus.
+
+```
+candump can0
+```
+
+### `cansend`
+
+Send a single CAN message on the bus. Pass the CAN ID, then `#` then the
+data bytes.
+
+```
+cansend can0 120#0011223344
+```
+
+### `cansniffer`
+
+See changing CAN traffic. Very useful to identify which bytes of which
+message contain the value for a sensor like the accelerator, brake,
+steering wheel sensor.
+
+```
+cansniffer can0 -cae
+```
+
+### `cangen`
+
+Generate random CAN messages so their effect can be investigated. See
+`cangen -h` for details on the arguments.
+
+```
+cangen can0
+```
+
+### `canplayer`
+
+Replay captured CAN log file from `candump`.
+
+```
+canplayer -I can_trace.asc can0
+```
+
 ## Resources
 
 Find out more about can-utils by running `candump -h`, `cansniffer -h`, `cansend -h`, `cangen -h`, `canplayer -h` and by looking at the [can-utils GitHub repository](https://github.com/linux-can/can-utils).
