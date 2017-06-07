@@ -62,9 +62,11 @@ Here's for example of running `candump can0` on a Ford Fiesta.
 
 <iframe width="853" height="480" src="https://www.youtube.com/embed/igTsTbvPPP0?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
+## Resources
 
+Find out more about can-utils by running `candump -h`, `cansniffer -h`, `cansend -h`, `cangen -h`, `canplayer -h` and by looking at the [can-utils GitHub repository](https://github.com/linux-can/can-utils).
 
-### Questions?
+## Questions?
 
 Join the [Carloop community forum discussion about SocketCAN](https://community.carloop.io/t/use-carloop-with-socketcan-and-can-utils/117) if you have questions or run into difficulties using Carloop as a SocketCAN device.
 
